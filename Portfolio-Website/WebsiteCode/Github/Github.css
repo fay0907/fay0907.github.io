@@ -1,7 +1,10 @@
 body {
+    background-image: url(''); /* Pas dit aan naar jouw afbeelding */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #282c34;
   }
   
   #desktop {
@@ -14,11 +17,10 @@ body {
   
   .window {
     display: none;
-    width: 80%;
+    width: 60%;
     background: white;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
   
   .window.active {
