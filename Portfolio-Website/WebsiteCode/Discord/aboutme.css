@@ -1,0 +1,222 @@
+body 
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative; /* Zorgt ervoor dat het overlay-element correct gepositioneerd wordt */
+    background-image: url('Images/Screenshot\ 2025-03-12\ 151406.jpg'); /* Voeg hier het pad naar je afbeelding in */
+    background-size: cover;  /* Zorg ervoor dat de afbeelding de volledige achtergrond bedekt */
+    background-position: center; /* Centreer de afbeelding */
+    background-repeat: no-repeat; /* Voorkom herhaling van de afbeelding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+}
+
+/* Pseudo-element voor de donkere overlay */
+body::before 
+{
+    content: ''; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.808); /* Donkere overlay met 50% transparantie */
+    z-index: -1; /* Zet de overlay achter de inhoud van de pagina */
+}
+
+.profile-container 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.green 
+{
+    width: 550px;
+    height: 200px;
+    background-color: #1a734c; /* Groene banner zoals in Discord */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.banner 
+{
+    width: 550px;
+    height: 550px;
+    background-color: hsl(0, 0%, 6%); 
+}
+
+#about-section
+{
+    padding-bottom: 133px;
+}
+
+.profile-card 
+{
+    background: #222325; /* Donkergrijze achtergrond voor de kaart */
+    padding-top: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    width: 450px;
+    margin-top: -440px; /* Overlap met banner zoals Discord */
+    position: relative;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+/* ---------- Profiel Foto en Rand --------- */
+
+.profile-pic 
+{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #0f0f0f; /* Rand zodat de profielfoto loskomt van de banner */
+    background: #0f0f0f;
+    padding: 3px;
+    position: absolute;
+    top: -180px;
+    left: 15%;
+    transform: translateX(-50%);
+}
+
+/* --------- De namen en text ---------- */
+.username 
+{
+    font-size: 22px;
+    margin-top: -50px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.userid 
+{
+    margin-top: -4%;
+    font-size: 14px;
+    color: #b9bbbe;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.info-section 
+{
+    margin-top: 2%;
+    text-align: left;
+    padding: 10px 20px;
+    margin-bottom: 100px;
+}
+
+.info-section h2 
+{
+    font-size: 16px;
+    margin-top: 15px;
+    color: #fff;
+}
+
+/* ---------- De Activity Tab ---------- */
+.info-section p 
+{
+    color: #b9bbbe;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.info-section i 
+{
+    margin-right: 8px;
+    color: #7289da; /* Discord blauwe iconen */
+}
+
+.tab-container {
+    display: flex;
+    justify-content: flex-start; /* Links uitlijnen */
+    gap: 20px; /* Ruimte tussen tabs */
+    margin-top: 15px;
+    padding-left: 5px; /* Links uitlijnen binnen de kaart */
+    padding-right: 270px;
+    border-bottom: 2px solid #40444b; /* Subtiele onderlijn */
+    width: fit-content;
+}
+
+.tab {
+    font-size: 16px;
+    color: #b9bbbe;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 5px; /* Ruimte voor het onderstreepte effect */
+}
+
+
+/* Streepje onder de actieve tab */
+.active-tab {
+    font-weight: bold;
+    color: #fff;
+}
+
+.active-tab::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: 110%;
+    height: 2px;
+    background-color: #7289da; /* Discord blauwe kleur */
+    transform: translateX(-50%);
+}
+
+/* ---------- ScrolBar ---------- */
+#activity-section {
+    padding: 10px 2px;
+    text-align: left;
+    background-color: hsl(0, 0, 0, 0.4); 
+    border-radius: 8px;
+    margin-top: 10px;
+    width: 100%;
+    height: 300px; 
+    overflow-y: auto; 
+    padding-right: 2px; 
+    position: relative;
+}
+
+/* Scrollbar stijl */
+#activity-section::-webkit-scrollbar {
+    width: 4px; 
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+}
+
+#activity-section:hover::-webkit-scrollbar {
+    opacity: 1; 
+}
+
+#activity-section::-webkit-scrollbar-track {
+    background: #232428; 
+}
+
+#activity-section::-webkit-scrollbar-thumb {
+    background: #181818; 
+    border-radius: 4px;
+}
+
+.game-list {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.game-item img {
+    width: 100%;
+    border-radius: 5px;
+}
+

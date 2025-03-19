@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Game Developer Portfolio</title>
+  <link rel="stylesheet" href="Desktop.css">
+  <script src="Desktop.js" defer></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div id="desktop">
+    <section id="hero" class="window active">
+      <div class="container">
+        <h2>Welkom op mijn Portfolio</h2>
+        <p>Ik ben een software game developer gespecialiseerd in interactieve en boeiende games.</p>
+      </div>
+    </section>
+  </div>
+
+  <div id="taskbar">
+    <div id="start-menu">
+      <button class="taskbar-btn" onclick="window.location.href='Desktop.html'">
+        <img src="Images/Windows.jpg" alt="Home">
+      </button>
+      <button class="taskbar-btn" onclick="window.location.href='../Discord/Aboutme.html'">
+        <img src="Images/Discord.jpg" alt="Discord">
+      </button>
+      <button class="taskbar-btn" onclick="openTab('projects')">
+        <img src="Images/Unity.jpg" alt="Projecten">
+      </button>
+      <button class="taskbar-btn" onclick="openTab('contact')">
+        <img src="Images/Github.jpg" alt="Contact">
+      </button>
+    </div>
+    <div id="taskbar-right">
+      <div id="system-tray">
+        <img src="Images/emage.png" alt="Wifi" class="system-icon">
+      </div>
+      <input type="color" id="bgPicker" onchange="changeBackground(this.value)">
+      <div id="clock"></div>
+    </div>
+  </div>
+</body>
+</html>

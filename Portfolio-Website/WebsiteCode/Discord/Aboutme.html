@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Profiel</title>
+    <link rel="stylesheet" href="aboutme.css">
+    <link rel="stylesheet" href="Taskbar.css">
+    <script src="Aboutme.js" defer></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="green"></div>
+        <div class="banner"></div>
+        
+
+        <div class="profile-card">
+            <img src="Images/MonsterCat.jpg" alt="Profielfoto" class="profile-pic">
+            <h1 class="username">Milky_Way0907</h1>
+            <p class="userid">milky_way0907</p>
+
+            <!-- Tab knoppen -->
+            <div class="tab-container">
+                <div id="about-tab" class="tab active-tab">Over Mij</div>
+                <div id="activity-tab" class="tab">Activiteit</div>
+            </div>
+            
+            <!-- Tab secties -->
+            <div id="about-section" class="tab-content">
+                <h2>Over Mij</h2>
+                <p><i class="fas fa-calendar"></i> Lid sinds: 2 februari 2019</p>
+                <h2>Connecties</h2>
+                <p><i class="fas fa-link"></i> Steam: MilkyWay0907 (Lid sinds 18 september 2023)</p>
+            </div>
+
+            <div id="activity-section" class="tab-content" style="display: none;">
+                <h2>Activiteit</h2>
+                <div class="game-list">
+                    <div class="game-item"><img src="Images/ReadyOrNot.jpg" alt="Gespeelde Game 1"></div>
+                    <div class="game-item"><img src="Images/BaloonsTD.jpg" alt="Gespeelde Game 2"></div>
+                    <div class="game-item"><img src="Images/NuclearThrone.jpg" alt="Gespeelde Game 3"></div>
+                    <div class="game-item"><img src="Images/DeadEstate.jpg" alt="Gespeelde Game 4"></div>
+                    <div class="game-item"><img src="Images/Minecraft.jpg" alt="Gespeelde Game 5"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="taskbar">
+            <div id="start-menu">
+              <button class="taskbar-btn" onclick="window.location.href='../Desktop/Desktop.html'">
+                <img src="../Desktop/Images/Windows.jpg" alt="Home">
+              </button>
+              <button class="taskbar-btn" onclick="window.location.href='../Discord/Aboutme.html'">
+                <img src="../Desktop/Images/Discord.jpg" alt="Discord">
+              </button>
+              <button class="taskbar-btn" onclick="openTab('projects')">
+                <img src="../Desktop/Images/Unity.jpg" alt="Projecten">
+              </button>
+              <button class="taskbar-btn" onclick="openTab('contact')">
+                <img src="../Desktop/Images/Github.jpg" alt="Contact">
+              </button>
+            </div>
+            <div id="taskbar-right">
+                <div id="system-tray">
+                    <img src="../Desktop/Images/emage.png" alt="Wifi" class="system-icon">
+                </div>
+              <input type="color" id="bgPicker" onchange="changeBackground(this.value)">
+              <div id="clock"></div>
+            </div>
+          </div>
+    </div>
+    
+        
+      
+</body>
+</html>
