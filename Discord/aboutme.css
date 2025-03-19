@@ -2,7 +2,7 @@ body
 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: relative; /* Zorgt ervoor dat het overlay-element correct gepositioneerd wordt */
-    background-image: url('Images/Screenshot\ 2025-03-12\ 151406.jpg'); /* Voeg hier het pad naar je afbeelding in */
+    background-image: url('../Jpg/image.jpg'); /* Voeg hier het pad naar je afbeelding in */
     background-size: cover;  /* Zorg ervoor dat de afbeelding de volledige achtergrond bedekt */
     background-position: center; /* Centreer de afbeelding */
     background-repeat: no-repeat; /* Voorkom herhaling van de afbeelding */
