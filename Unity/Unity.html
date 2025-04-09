@@ -1,33 +1,75 @@
 <!DOCTYPE html>
 <html lang="nl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="Unity.css">
-  <script src="Unity.js" defer></script>
-  <title>Lege Pagina</title>
-</head>
-<body>
-    <div id="taskbar">
-        <div id="start-menu">
-            <button class="taskbar-btn" onclick="window.location.href='../index.html'">
-                <img src="../Jpg/Windows.jpg" alt="Home">
-              </button>
-              <button class="taskbar-btn" onclick="window.location.href='../Discord/Aboutme.html'">
-                <img src="../Jpg/Discord.jpg" alt="Discord">
-              </button>
-              <button class="taskbar-btn" onclick="window.location.href='../Unity/Unity.html'">
-                <img src="../Jpg/Unity.jpg" alt="Projecten">
-              </button>
-              <button class="taskbar-btn" onclick="window.location.href='../Github/Github.html'">
-                <img src="../Jpg/Github.jpg" alt="Contact">
-          </button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Unity.css"/>
+    <link rel="stylesheet" href="../index.css"/>
+    <script src="Unity.js" defer></script>
+    <title>Unity Hub Interface</title>
+  </head>
+  <body>
+    
+    <!-- Unity Hub Container -->
+    <div class="unity-hub-container">
+      <header>
+        <div class="title">Unity Hub 3.0.0</div>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Installs</a></li>
+            <li><a href="#">Learn</a></li>
+            <li><a href="#">Community</a></li>
+          </ul>
+        </nav>
+        <div class="release-notes">
+          <span>Beta v2023 is now available...</span>
         </div>
-        <div id="taskbar-right">
-          <div id="system-tray">
-            <img src="../Jpg/emage.jpg" alt="Wifi" class="system-icon">
+      </header>
+
+      <!-- Content sectie -->
+      <main>
+        <div class="projects-header">
+          <h1>Projects</h1>
+          <div class="project-controls">
+            <button class="add-button" id="add-project-btn">+ New Project</button>
           </div>
-          <input type="color" id="bgPicker" onchange="changeBackground(this.value)">
-          <div id="clock"></div>
-</body>
+        </div>
+        <div class="project-list" id="project-list">
+          <!-- Dynamisch gevuld via Unity.js -->
+        </div>
+      </main>
+    </div>
+    <!-- De enige echte taskbar -->
+  <div id="taskbar">
+    <!-- Apps in het midden -->
+    <div id="taskbar-center">
+      <button class="taskbar-btn" onclick="window.location.href='../index.html'">
+        <img src="../Jpg/Windows.jpg" alt="Home">
+      </button>
+      <button class="taskbar-btn" onclick="window.location.href='../Discord/Aboutme.html'">
+        <img src="../Jpg/Discord.jpg" alt="Discord">
+      </button>
+      <button class="taskbar-btn" onclick="window.location.href='../Unity/Unity.html'">
+        <img src="../Jpg/Unity.jpg" alt="Projecten">
+      </button>
+      <button class="taskbar-btn" onclick="window.location.href='../Github/Github.html'">
+        <img src="../Jpg/Github.jpg" alt="Contact">
+      </button>
+    </div>
+    <!-- Klok rechts -->
+    <div id="taskbar-right">
+      <div id="clock"></div>
+    </div>
+
+    <!-- Modal voor video -->
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <span class="close" id="close-modal">&times;</span>
+        <div id="video-container">
+          <!-- Hier komt de video dynamisch in -->
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

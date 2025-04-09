@@ -5,22 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Game Developer Portfolio</title>
-  <link rel="stylesheet" href="Desktop.css">
+  <link rel="stylesheet" href="index.css">
   <script src="Desktop.js" defer></script>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body style="
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('Jpg/Dipsous.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding-bottom: 60px; /* <-- Deze moet overal! */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+">
   <div id="desktop">
     <section id="hero" class="window active">
       <div class="container">
         <h2>Welkom op mijn Portfolio</h2>
-        <p>Ik ben een software game developer gespecialiseerd in interactieve en boeiende games.</p>
+        <p>Look out this is not your owne taskbar \/ </p>
       </div>
     </section>
   </div>
 
+  <!-- De enige echte taskbar -->
   <div id="taskbar">
-    <div id="start-menu">
+    <!-- Apps in het midden -->
+    <div id="taskbar-center">
       <button class="taskbar-btn" onclick="window.location.href='index.html'">
         <img src="Jpg/Windows.jpg" alt="Home">
       </button>
@@ -34,11 +49,9 @@
         <img src="Jpg/Github.jpg" alt="Contact">
       </button>
     </div>
+
+    <!-- Klok rechts -->
     <div id="taskbar-right">
-      <div id="system-tray">
-        <img src="Jpg/emage.jpg" alt="Wifi" class="system-icon">
-      </div>
-      <input type="color" id="bgPicker" onchange="changeBackground(this.value)">
       <div id="clock"></div>
     </div>
   </div>

@@ -1,13 +1,12 @@
-body {
-  background-image: url('Jpg/Dipsous.jpg'); /* Pas dit aan naar jouw afbeelding */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+/* Reset en basisinstellingen */
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#desktop {
+/* ---------- Desktop en Vensters ---------- */
+#desktop { 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,6 +26,7 @@ body {
   display: block;
 }
 
+/* ---------- Taskbar ---------- */
 #taskbar {
   position: fixed;
   bottom: 0;
@@ -35,15 +35,19 @@ body {
   background: #222;
   display: flex;
   align-items: center;
-  justify-content: center; /* Centreert de inhoud horizontaal */
+  justify-content: center; /* Apps in het midden */
   padding: 0 15px;
 }
 
+/* Startmenu in de taskbar - helemaal links */
 #start-menu {
+  position: absolute;
+  left: 15px;
   display: flex;
   gap: 10px;
 }
 
+/* Taskbar rechter gedeelte - helemaal rechts */
 #taskbar-right {
   position: absolute;
   right: 15px;
@@ -52,6 +56,7 @@ body {
   align-items: center;
 }
 
+/* Taskbar knoppen */
 .taskbar-btn {
   background: none;
   border: none;
@@ -64,6 +69,7 @@ body {
   object-fit: cover;
 }
 
+/* Eerste knop zonder afronding, de rest met afronding */
 .taskbar-btn:first-child img {
   border-radius: 0;
 }
@@ -72,11 +78,15 @@ body {
   border-radius: 50%;
 }
 
+/* Achtergrondkiezer, verborgen indien niet nodig */
 #bgPicker {
   margin-left: auto;
   margin-right: 10px;
+  visibility: hidden;
+  pointer-events: none;
 }
 
+/* Klokstijl */
 #clock {
   color: white;
   font-size: 16px;
@@ -84,11 +94,8 @@ body {
   padding: 5px 10px;
   border-radius: 5px;
 }
-#bgPicker {
-  visibility: hidden;
-  pointer-events: none;
-}
 
+/* Systeemvak-icoontjes (indien van toepassing) */
 #system-tray {
   display: flex;
   align-items: center;
@@ -96,7 +103,7 @@ body {
 }
 
 .system-icon {
-  width: 100px; /* pas de grootte aan naar wens */
+  width: 100px; /* Pas de grootte aan naar wens */
   height: 200px;
   object-fit: contain;
 }

@@ -81,11 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
 setInterval(updateClock, 1000);
 updateClock();
 
-document.addEventListener("DOMContentLoaded", () => {
-    const clock = document.createElement("div");
-    clock.id = "clock";
-    document.getElementById("taskbar").appendChild(clock);
-});
 
 });
 
