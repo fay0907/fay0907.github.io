@@ -3,35 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="Github.css">
-  <link rel="stylesheet" href="../index.css"/>
-  <script src="Github.js" defer></script>
-  <title>Lege Pagina</title>
+  <title>GitHub Redirect</title>
+  <script>
+    window.onload = function() {
+      // Open de GitHub-pagina in een nieuw tabblad (of venster)
+      window.open("https://github.com", "_blank");
+      // Redirect de huidige pagina naar index.html
+      window.location.href = "../index.html";
+    };
+  </script>
 </head>
-<body>
-  <div id="taskbar">
-    <div id="start-menu">
-    </div>
-    <div id="taskbar-center">
-      <button class="taskbar-btn" onclick="window.location.href='../index.html'">
-        <img src="../Jpg/Windows.jpg" alt="Home">
-      </button>
-      <button class="taskbar-btn" onclick="window.location.href='../Discord/Aboutme.html'">
-        <img src="../Jpg/Discord.jpg" alt="Discord">
-      </button>
-      <button class="taskbar-btn" onclick="window.location.href='../Unity/Unity.html'">
-        <img src="../Jpg/Unity.jpg" alt="Projecten">
-      </button>
-      <button class="taskbar-btn" onclick="window.location.href='../Github/Github.html'">
-        <img src="../Jpg/Github.jpg" alt="Contact">
-      </button>
-    </div>
-
-    <!-- Klok rechts -->
-    <div id="taskbar-right">
-      <div id="clock"></div>
-    </div>
-    
-  </div>
-</body>
 </html>
