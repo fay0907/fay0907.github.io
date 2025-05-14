@@ -6,9 +6,13 @@
 }
 
 body {
+  margin: 0; /* Verwijder standaard marges */
+  padding: 0; /* Verwijder standaard padding */
+  box-sizing: border-box; /* Zorgt voor consistente box-modellen */
   background-color: #1e1e1e;
   font-family: Arial, sans-serif;
   color: #eee;
+  overflow: hidden; /* Verwijder de scrollbar */
 }
 
 /* ---------- Unity Hub Container (centrum plaatsen) ---------- */
@@ -171,4 +175,30 @@ header {
 .close:hover,
 .close:focus {
   color: red; /* Kleur verandert bij hover/focus */
+}
+
+
+/* Downloadknop styling */
+.download-button {
+  background-color: #3c3c3c;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.download-button:hover {
+  background-color: #555;
+}
+
+#desktop {
+  min-height: calc(100vh - 50px); /* Zorgt ervoor dat de inhoud boven de taskbar blijft */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

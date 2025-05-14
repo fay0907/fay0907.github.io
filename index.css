@@ -5,13 +5,18 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0; /* Verwijder standaard marges */
+  padding: 0; /* Verwijder standaard padding */
+  box-sizing: border-box; /* Zorgt voor consistente box-modellen */
+}
+
 /* ---------- Desktop en Vensters ---------- */
-#desktop { 
+#desktop {
+  min-height: calc(100vh - 50px); /* Zorgt ervoor dat de inhoud boven de taskbar blijft */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 90vh;
+  justify-content: space-between;
 }
 
 /* Voor het venster geldt nu een lichte achtergrond met donkere tekst */
@@ -30,15 +35,17 @@
 
 /* ---------- Taskbar ---------- */
 #taskbar {
-  position: fixed;
+  position: fixed; /* Zorgt ervoor dat de taskbar altijd onderaan blijft */
   bottom: 0;
-  width: 100%;
-  height: 50px;
-  background: #222;
+  left: 0;
+  width: 100%; /* Zorgt ervoor dat de taskbar de volledige breedte van de pagina inneemt */
+  height: 50px; /* Consistente hoogte */
+  background: #222; /* Achtergrondkleur */
   display: flex;
   align-items: center;
   justify-content: center; /* Apps in het midden */
   padding: 0 15px;
+  z-index: 1000; /* Zorgt ervoor dat de taskbar boven andere elementen blijft */
 }
 
 /* Startmenu in de taskbar - helemaal links */

@@ -205,17 +205,16 @@ body::before
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #282c34;
-  }
+  margin: 0; /* Verwijder standaard marges */
+  padding: 0; /* Verwijder standaard padding */
+  box-sizing: border-box; /* Zorgt voor consistente box-modellen */
+}
   
   #desktop {
+    min-height: calc(100vh - 50px); /* Zorgt ervoor dat de inhoud boven de taskbar blijft */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 90vh;
+    justify-content: space-between;
   }
   
   .window {
@@ -230,6 +229,5 @@ body {
   .window.active {
     display: block;
   }
-  
- 
-  
+
+
