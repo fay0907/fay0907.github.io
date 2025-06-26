@@ -137,22 +137,22 @@ function updateClock() {
   // Voorbeeld projectdata – voeg een downloadUrl toe
   const Projects = [
     {
-      name: "TeamDemo",
-      path: "C:/Projects/TeamDemo",
+      name: "ZwedenProject",
+      path: "C:/Projects/ZwedenProject",
       cloudStatus: "Yes",
       modified: "3 days ago",
       unityVersion: "2021.3.1f1",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      downloadUrl: "./Builds/TeamDemo.zip" // Gebruik een relatieve URL
+      downloadUrl: "./Builds/ZwedenProject.zip" // Gebruik een relatieve URL
     },
     {
-      name: "OperationOrbital",
-      path: "C:/Projects/OperationOrbital",
+      name: "OperationStarfall",
+      path: "C:/Projects/OperationStarfall",
       cloudStatus: "No",
       modified: "5 days ago",
       unityVersion: "2021.3.0f2",
       videoUrl: "https://www.youtube.com/embed/tgbNymZ7vqY",
-      downloadUrl: "./Builds/OperationOrbital.zip"
+      downloadUrl: "./Builds/OperationStarfall.zip"
     },
     {
       name: "PlanetPuzzle",

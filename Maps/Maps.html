@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Maps</title>
+  <!-- Bootstrap -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="Maps.css">
+  <!-- Custom JS -->
+  <script src="Maps.js" defer></script>
+</head>
+<body>
+  <div id="taskbar">
+    <div id="taskbar-center">
+      <!-- bestaande buttons -->
+      <button class="taskbar-btn" onclick="window.location.href='../index.html'"><img src="../Jpg/Windows.jpg" alt="Home"></button>
+      <button class="taskbar-btn" onclick="window.location.href='../Discord/Aboutme.html'"><img src="../Jpg/Discord.jpg" alt="Discord"></button>
+      <button class="taskbar-btn" onclick="window.location.href='../Unity/Unity.html'"><img src="../Jpg/Unity.jpg" alt="Projecten"></button>
+      <button class="taskbar-btn" onclick="window.location.href='../Github/Github.html'"><img src="../Jpg/Github.jpg" alt="Contact"></button>
+      <button class="taskbar-btn" onclick="window.location.href='Maps.html'"><img src="../../Jpg/Maps.jpg" alt="Maps"></button>
+    </div>
+    <div id="taskbar-right">
+      <div id="clock"></div>
+    </div>
+  </div>
+
+  <!-- Info-knop -->
+  <button id="info-button">
+    <img src="Jpg/info_icon.png" alt="Info" />
+  </button>
+
+  <!-- Uitschuifpaneel -->
+  <div id="info-panel">
+    <div class="close-btn">×</div>
+    <h2>Informatie</h2>
+    <div class="media-section">
+      <img src="images/info_photo.jpg" alt="Foto">
+      <video controls src="videos/info_video.mp4"></video>
+      <p>Hier komt de uitleg over deze locatie: tekst, foto en video.</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -11,20 +11,6 @@ body {
   box-sizing: border-box; /* Zorgt voor consistente box-modellen */
 }
 
-/* Voor het venster geldt nu een lichte achtergrond met donkere tekst */
-.window {
-  display: none;
-  width: 60%;
-  background: white;
-  padding: 10px;
-  border-radius: 10px;
-  color: black; /* Zorgt ervoor dat de tekst donker (zwart) is */
-}
-
-.window.active {
-  display: block;
-}
-
 /* ---------- Taskbar ---------- */
 #taskbar {
   position: fixed; /* Zorgt ervoor dat de taskbar altijd onderaan blijft */
@@ -75,7 +61,6 @@ body {
 .taskbar-btn:first-child img {
   border-radius: 0;
 }
-
 .taskbar-btn:not(:first-child) img {
   border-radius: 50%;
 }
@@ -109,3 +94,53 @@ body {
   height: 200px;
   object-fit: contain;
 }
+
+/* ---------- Landen ---------- */
+
+/* Reset en basis */
+body, html { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+#taskbar { height: 50px; background: #333; display: flex; justify-content: space-between; align-items: center; padding: 0 10px; }
+.taskbar-btn img { width: 24px; height: 24px; }
+
+/* Info-knop */
+#info-button {
+  position: fixed;
+  bottom: 850px;
+  right: 1700px;
+  background: #007bff;
+  border: none;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+#info-button.open { transform: translateX(-300px); }
+#info-button img { width: 30px; height: 30px; }
+
+/* Uitschuifpaneel */
+#info-panel {
+  position: fixed;
+  top: 0;
+  right: -700px;
+  width: 700px;
+  height: 100%;
+  background: #f8f9fa;
+  box-shadow: -2px 0 6px rgba(0,0,0,0.2);
+  transition: right 0.3s ease;
+  padding: 20px;
+  overflow-y: auto;
+}
+#info-panel.open { right: 0; }
+#info-panel .close-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+#info-panel h2 { margin-top: 40px; font-size: 20px; }
+.media-section img,
+.media-section video { width: 100%; margin-bottom: 10px; }
+.media-section p { font-size: 14px; line-height: 1.5; }
