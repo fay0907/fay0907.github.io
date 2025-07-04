@@ -25,6 +25,19 @@ body {
   display: block;
 }
 
+/* Reset en basisinstellingen */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0; /* Verwijder standaard marges */
+  padding: 0; /* Verwijder standaard padding */
+  box-sizing: border-box; /* Zorgt voor consistente box-modellen */
+}
+
 /* ---------- Taskbar ---------- */
 #taskbar {
   position: fixed; /* Zorgt ervoor dat de taskbar altijd onderaan blijft */
