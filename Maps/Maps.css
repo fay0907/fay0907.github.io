@@ -1,14 +1,21 @@
+body 
+{
+  background-image: url('../Jpg/MapsTravelList.jpg');
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
 /* ---------- Landen ---------- */
 /* Info-knop */
 #info-button {
   position: fixed;
-  bottom: 850px;
-  right: 1700px;
+  bottom: 638px;
+  right: 1704px;
   background: #007bff;
   border: none;
-  border-radius: 50%;
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -25,20 +32,19 @@
   display: block;
 }
 
-#info-button.open { transform: translateX(-300px); }
-
 #info-panel {
   position: fixed;
   top: 0;
   right: -700px;
   width: 700px;
   height: 100%;
-  background: #f8f9fa;
-  box-shadow: -2px 0 6px rgba(0,0,0,0.2);
+  background: #ffffff;
+  box-shadow: -10px 0 6px rgba(0, 0, 0, 0.2);
   transition: right 0.3s ease;
   padding: 20px;
   overflow-y: auto;
 }
+
 #info-panel.open { right: 0; }
 
 #info-panel .close-btn {
@@ -49,7 +55,14 @@
   cursor: pointer;
 }
 
+#info-panel img {
+  width: 110%;
+  height: auto;
+  margin-bottom: 20px;
+  margin-left: -30px;
+}
 #info-panel h2 { margin-top: 40px; font-size: 20px; }
 .media-section img,
 .media-section video { width: 100%; margin-bottom: 10px; }
-.media-section p { font-size: 14px; line-height: 1.5; }
+.media-section p { font-size: 20px; line-height: 1.5; }
+

@@ -1,4 +1,11 @@
 /* Reset en basisinstellingen */
+#desktop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +13,28 @@
 }
 
 body {
-  margin: 0; /* Verwijder standaard marges */
   padding: 0; /* Verwijder standaard padding */
   box-sizing: border-box; /* Zorgt voor consistente box-modellen */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('Jpg/Dipsous.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding-bottom: 60px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#buttonCopy-leftSide {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  margin-left: 10px;
 }
 
 /* Voor het venster geldt nu een lichte achtergrond met donkere tekst */
@@ -68,6 +94,31 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px; /* Zorgt ervoor dat dit gedeelte de beschikbare ruimte opvult */
+}
+
+#taskbarLeft {
+  position: absolute;
+  top: 25px;
+  left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-taskbarButton {
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 30px;
+  height: 65px;
+  border-radius: 50%;
+  justify-content: center;
+}
+
+.left-taskbarButton:not(:first-child) img {
+  border-radius: 50%;
 }
 
 /* Taskbar knoppen */

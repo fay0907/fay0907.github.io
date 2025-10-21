@@ -9,21 +9,26 @@
   <script src="Desktop.js" defer></script>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body style="
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url('Jpg/Dipsous.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: 0;
-  padding-bottom: 60px;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  overflow: hidden;
-">
+<body>
+  <div id="buttonCopy-leftSide">
+    <!-- Apps in het midden -->
+    <div id="taskbarLeft">
+      <button class="left-taskbarButton" onclick="window.location.href='index.html'">
+        <img src="Jpg/Windows.jpg" alt="Home">
+      </button>
+      <button class="left-taskbarButton" onclick="window.location.href='../Discord/Aboutme.html'">
+        <img src="Jpg/Discord.jpg" alt="Discord">
+      </button>
+      <button class="left-taskbarButton" onclick="window.location.href='../Unity/Unity.html'">
+        <img src="Jpg/Unity.jpg" alt="Projecten">
+      </button>
+      <button class="left-taskbarButton" onclick="window.location.href='../Github/Github.html'">
+        <img src="Jpg/Github.jpg" alt="Contact">
+      </button>
+      <button class="left-taskbarButton" onclick="window.location.href='../Maps/Maps.html'">
+        <img src="../Jpg/Maps.jpg" alt="Maps">
+      </button>
+  </div>
   <div id="desktop">
     <section id="hero" class="window active">
       <div class="container">
@@ -49,7 +54,7 @@
       <button class="taskbar-btn" onclick="window.location.href='../Github/Github.html'">
         <img src="Jpg/Github.jpg" alt="Contact">
       </button>
-      <button class="taskbar-btn" onclick="window.location.href='../Maps/Maps.html'">
+      <button style="width: 65px;" class="taskbar-btn" onclick="window.location.href='../Maps/Maps.html'">
         <img src="../Jpg/Maps.jpg" alt="Maps">
       </button>
     </div>

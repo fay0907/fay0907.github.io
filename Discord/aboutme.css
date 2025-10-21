@@ -3,7 +3,7 @@ body
 {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #242529; /* Donkere achtergrondkleur */
-  background-image: url('../Jpg/image.jpg');
+  background-image: url('../Jpg/DiscordBackgound.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -108,7 +108,7 @@ body
 
 .info-section h2 
 {
-    font-size: 16px;
+    font-size: 1px;
     margin-top: 15px;
     color: #fff;
 }
