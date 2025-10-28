@@ -66,3 +66,139 @@ body
 .media-section video { width: 100%; margin-bottom: 10px; }
 .media-section p { font-size: 20px; line-height: 1.5; }
 
+/* Voor het venster geldt nu een lichte achtergrond met donkere tekst */
+.window {
+  display: none;
+  width: 60%;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  color: black; /* Zorgt ervoor dat de tekst donker (zwart) is */
+}
+
+.window.active {
+  display: block;
+}
+
+/* Reset en basisinstellingen */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0; /* Verwijder standaard marges */
+  padding: 0; /* Verwijder standaard padding */
+  box-sizing: border-box; /* Zorgt voor consistente box-modellen */
+}
+
+/* ---------- Taskbar ---------- */
+#taskbar {
+  position: fixed; /* Zorgt ervoor dat de taskbar altijd onderaan blijft */
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Zorgt ervoor dat de taskbar de volledige breedte van de pagina inneemt */
+  height: 50px; /* Consistente hoogte */
+  background: #222; /* Achtergrondkleur */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Apps in het midden */
+  padding: 0 15px;
+  z-index: 1000; /* Zorgt ervoor dat de taskbar boven andere elementen blijft */
+}
+
+
+/* Taskbar rechter gedeelte - helemaal rechts */
+#taskbar-right {
+  position: absolute;
+  right: 15px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#taskbar-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Zorgt ervoor dat dit gedeelte de beschikbare ruimte opvult */
+}
+
+#taskbarLeft {
+  position: absolute;
+  top: 25px;
+  left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-taskbarButton {
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 30px;
+  height: 65px;
+  border-radius: 50%;
+  justify-content: center;
+}
+
+.left-taskbarButton:not(:first-child) img {
+  border-radius: 50%;
+}
+
+/* Taskbar knoppen */
+.taskbar-btn {
+  background: none;
+  border: none;
+  height: 30px;
+  cursor: pointer;
+}
+
+.taskbar-btn img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+/* Eerste knop zonder afronding, de rest met afronding */
+.taskbar-btn:first-child img {
+  border-radius: 0;
+}
+
+.taskbar-btn:not(:first-child) img {
+  border-radius: 50%;
+}
+
+/* Achtergrondkiezer, verborgen indien niet nodig */
+#bgPicker {
+  margin-left: auto;
+  margin-right: 10px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Klokstijl */
+#clock {
+  color: white;
+  font-size: 16px;
+  font-family: 'Courier New', monospace;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Systeemvak-icoontjes (indien van toepassing) */
+#system-tray {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.system-icon {
+  width: 100px; /* Pas de grootte aan naar wens */
+  height: 200px;
+  object-fit: contain;
+}
