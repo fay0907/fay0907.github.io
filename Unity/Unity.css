@@ -1,341 +1,436 @@
-/* ---------- Algemene Stijlen en Reset ---------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+  }
 
 body {
-  margin: 0; /* Verwijder standaard marges */
-  padding: 0; /* Verwijder standaard padding */
-  box-sizing: border-box; /* Zorgt voor consistente box-modellen */
-  background-color: #212121;
-  font-family: Arial, sans-serif;
-  color: #eee;
-  overflow: hidden; /* Verwijder de scrollbar */
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+background-color: #212121;
+font-family: Arial, sans-serif;
+color: #eee;
+overflow: hidden;
 }
 
 /* ---------- Unity Hub Container (centrum plaatsen) ---------- */
 .unity-hub-container {
-  max-width: 1200px;
-  margin: 20px auto;  /* Centraal met verticale marge */
-  padding: 20px;
+max-width: 1200px;
+margin: 20px auto;
+padding: 20px;
 }
 
 /* Header styling */
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-bottom: 10px;
 }
 
 .title {
-  font-size: 1.2rem;
-  color: #ccc;
+font-size: 1.2rem;
+color: #ccc;
 }
 
 .nav-menu ul {
-  list-style-type: none;
-  display: flex;
-  gap: 20px;
+list-style-type: none;
+display: flex;
+gap: 20px;
 }
 
 .nav-menu a {
-  color: #ccc;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
+color: #ccc;
+text-decoration: none;
+font-weight: bold;
+transition: color 0.3s ease;
 }
 
 .nav-menu a:hover {
-  color: #fff;
+color: #fff;
 }
 
 .release-notes {
-  font-size: 0.9rem;
-  color: #a0a0a0;
+font-size: 0.9rem;
+color: #a0a0a0;
 }
 
 /* Projects sectie */
 .projects-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+display: flex;
+align-items: center;
+justify-content: space-between;
 }
 
 .projects-header h1 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: #fff;
+font-size: 1.8rem;
+margin-bottom: 20px;
+color: #fff;
 }
 
 .project-controls {
-  display: flex;
-  gap: 10px;
-  align-items: center;
+display: flex;
+gap: 10px;
+align-items: center;
 }
 
 .add-button {
-  background-color: #3c3c3c;
-  color: #fff;
-  padding: 8px 16px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+background-color: #3c3c3c;
+color: #fff;
+padding: 8px 16px;
+border: none;
+cursor: pointer;
+font-weight: bold;
+border-radius: 4px;
+transition: background-color 0.3s ease;
 }
 
 .add-button:hover {
-  background-color: #555;
+background-color: #555;
 }
 
 /* Project lijst */
 .project-list {
-  background-color: #2e2e2e;
-  padding: 10px;
-  border-radius: 5px;
+background-color: #2e2e2e;
+padding: 10px;
+border-radius: 5px;
 }
 
 .project-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #3b3b3b;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: #3b3b3b;
+margin: 10px 0;
+padding: 10px;
+border-radius: 4px;
+cursor: pointer;
+transition: background-color 0.3s ease;
 }
 
 .project-item:hover {
-  background-color: #4a4a4a;
+background-color: #4a4a4a;
 }
 
 .project-details {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  color: #fff;
+display: flex;
+flex-direction: column;
+gap: 5px;
+color: #fff;
 }
 
 .project-name {
-  font-size: 1.1rem;
-  font-weight: bold;
+font-size: 1.1rem;
+font-weight: bold;
 }
 
 .project-path {
-  font-size: 0.8rem;
-  color: #bbb;
+font-size: 0.8rem;
+color: #bbb;
 }
 
 .project-info {
-  display: flex;
-  gap: 20px;
-  font-size: 0.9rem;
-  color: #ccc;
+display: flex;
+gap: 20px;
+font-size: 0.9rem;
+color: #ccc;
 }
 
-/* CSS voor de modal */
+/* ------------------- Modal ------------------- */
 .modal {
-  display: none; /* Verborgen standaard */
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* Achtergronddimming */
+display: none;
+position: fixed;
+z-index: 1;
+margin-left: 400px;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.4);
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
-/* Modal content */
 .modal-content {
-  position: relative;
-  margin: 15% auto;
-  padding: 20px;
-  width: 80%;
-  background-color: white;
-  border-radius: 10px;
+position: relative;
+max-height: calc(100vh - 100px);
+overflow: auto;
+-webkit-overflow-scrolling: touch;
+width: 80%;
+background-color: white;
+padding: 20px;
+border-radius: 10px;
+scrollbar-width: thin;
+scrollbar-color: rgba(0,0,0,0.3) transparent;
+}
+
+.modal-content::-webkit-scrollbar {
+width: 10px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+background: transparent;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+background: rgba(0,0,0,0.25);
+border-radius: 8px;
+border: 2px solid transparent;
+background-clip: padding-box;
+}
+
+.modal-content:hover::-webkit-scrollbar-thumb {
+background: rgba(0,0,0,0.35);
 }
 
 /* Sluitknop (kruisje) */
 .close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 30px;
-  font-weight: bold;
-  color: black;
-  cursor: pointer;
-  transition: color 0.3s;
+position: absolute;
+top: 10px;
+right: 15px;
+font-size: 30px;
+font-weight: bold;
+color: black;
+cursor: pointer;
+transition: color 0.3s;
 }
 
 .close:hover,
 .close:focus {
-  color: red; /* Kleur verandert bij hover/focus */
+color: red;
 }
 
-
-/* Downloadknop styling */
+/* Downloadknop */
 .download-button {
-  background-color: #3c3c3c;
-  color: #fff;
-  padding: 5px 10px;
-  border: none;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: bold;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
+background-color: #3c3c3c;
+color: #fff;
+padding: 5px 10px;
+border: none;
+text-decoration: none;
+font-size: 0.9rem;
+font-weight: bold;
+border-radius: 4px;
+transition: background-color 0.3s ease;
+cursor: pointer;
 }
 
 .download-button:hover {
-  background-color: #555;
+background-color: #555;
 }
 
 #desktop {
-  min-height: calc(100vh - 50px); /* Zorgt ervoor dat de inhoud boven de taskbar blijft */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+min-height: calc(100vh - 50px);
+display: flex;
+flex-direction: column;
+justify-content: space-between;
 }
 
-/* Voor het venster geldt nu een lichte achtergrond met donkere tekst */
+/* Vensters */
 .window {
-  display: none;
-  width: 60%;
-  background: white;
-  padding: 10px;
-  border-radius: 10px;
-  color: black; /* Zorgt ervoor dat de tekst donker (zwart) is */
+display: none;
+width: 60%;
+background: white;
+padding: 10px;
+border-radius: 10px;
+color: black;
 }
 
 .window.active {
-  display: block;
+display: block;
 }
 
-/* Reset en basisinstellingen */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0; /* Verwijder standaard marges */
-  padding: 0; /* Verwijder standaard padding */
-  box-sizing: border-box; /* Zorgt voor consistente box-modellen */
-}
-
-/* ---------- Taskbar ---------- */
+/* Taskbar */
 #taskbar {
-  position: fixed; /* Zorgt ervoor dat de taskbar altijd onderaan blijft */
-  bottom: 0;
-  left: 0;
-  width: 100%; /* Zorgt ervoor dat de taskbar de volledige breedte van de pagina inneemt */
-  height: 50px; /* Consistente hoogte */
-  background: #222; /* Achtergrondkleur */
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Apps in het midden */
-  padding: 0 15px;
-  z-index: 1000; /* Zorgt ervoor dat de taskbar boven andere elementen blijft */
+position: fixed;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 50px;
+background: #222;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 0 15px;
+z-index: 1000;
 }
 
-
-/* Taskbar rechter gedeelte - helemaal rechts */
 #taskbar-right {
-  position: absolute;
-  right: 15px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
+position: absolute;
+right: 15px;
+display: flex;
+gap: 10px;
+align-items: center;
 }
 
 #taskbar-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px; /* Zorgt ervoor dat dit gedeelte de beschikbare ruimte opvult */
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
 }
 
 #taskbarLeft {
-  position: absolute;
-  top: 25px;
-  left: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+position: absolute;
+top: 25px;
+left: 15px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 }
 
 .left-taskbarButton {
-  display: flex;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin: 30px;
-  height: 65px;
-  border-radius: 50%;
-  justify-content: center;
+display: flex;
+background: none;
+border: none;
+cursor: pointer;
+margin: 30px;
+height: 65px;
+border-radius: 50%;
+justify-content: center;
 }
 
 .left-taskbarButton:not(:first-child) img {
-  border-radius: 50%;
+border-radius: 50%;
 }
 
-/* Taskbar knoppen */
 .taskbar-btn {
-  background: none;
-  border: none;
-  height: 30px;
-  cursor: pointer;
+background: none;
+border: none;
+height: 30px;
+cursor: pointer;
 }
 
 .taskbar-btn img {
-  width: 30px;
-  height: 30px;
-  object-fit: cover;
+width: 30px;
+height: 30px;
+object-fit: cover;
 }
 
-/* Eerste knop zonder afronding, de rest met afronding */
 .taskbar-btn:first-child img {
-  border-radius: 0;
+border-radius: 0;
 }
 
 .taskbar-btn:not(:first-child) img {
-  border-radius: 50%;
+border-radius: 50%;
 }
 
-/* Achtergrondkiezer, verborgen indien niet nodig */
 #bgPicker {
-  margin-left: auto;
-  margin-right: 10px;
-  visibility: hidden;
-  pointer-events: none;
+margin-left: auto;
+margin-right: 10px;
+visibility: hidden;
+pointer-events: none;
 }
 
-/* Klokstijl */
 #clock {
-  color: white;
-  font-size: 16px;
-  font-family: 'Courier New', monospace;
-  padding: 5px 10px;
-  border-radius: 5px;
+color: white;
+font-size: 16px;
+font-family: 'Courier New', monospace;
+padding: 5px 10px;
+border-radius: 5px;
 }
 
-/* Systeemvak-icoontjes (indien van toepassing) */
 #system-tray {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+display: flex;
+align-items: center;
+gap: 8px;
 }
 
 .system-icon {
-  width: 100px; /* Pas de grootte aan naar wens */
-  height: 200px;
-  object-fit: contain;
+width: 100px;
+height: 200px;
+object-fit: contain;
 }
+
+/* -------------------- DOCUMENTATIE MODAL (UNITY STYLE) -------------------- */
+.docs-modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+}
+
+.docs-wrapper {
+  width: 80%;
+  height: 80%;
+  background: #1f1f1f;
+  margin: 5% auto;
+  border-radius: 10px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+}
+
+.docs-sidebar {
+  width: 250px;
+  background: #2a2a2a;
+  padding: 20px;
+  overflow-y: auto;
+  color: #ddd;
+  font-size: 0.9rem;
+}
+
+.docs-sidebar div {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: .2s;
+}
+
+.docs-sidebar div:hover {
+  background: #3b3b3b;
+}
+
+.docs-content {
+  flex: 1;
+  background: #181818;
+  padding: 30px;
+  overflow-y: auto;
+  position: relative;
+  color: #eee;
+}
+
+.docs-close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 35px;
+  cursor: pointer;
+  color: #ccc;
+  transition: .2s;
+}
+
+.docs-close:hover {
+  color: red;
+}
+
+#docs-body img,
+#docs-body video {
+  width: 100%;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+.project-info .docs-button {
+  display: inline-block;
+  background: #3c3c3c;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: background 0.3s;
+}
+
+.project-info .docs-button:hover {
+  background: #555;
+}
+

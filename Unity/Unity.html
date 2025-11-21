@@ -4,12 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="Unity.css"/>
+    <script src="Documentation.js" defer></script>
+    <script src="Unity.js" defer></script>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
     <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.min.js" defer></script>
-    <script src="Unity.js" defer></script>
     <title>Unity Hub Interface</title>
   </head>
   <body>
+
     <!-- Unity Hub Container -->
     <div class="unity-hub-container">
       <header>
@@ -61,18 +63,19 @@
       <div id="clock"></div>
     </div>
 
-    <!-- Modal voor video -->
-    <div class="modal" id="modal">
-      <div class="modal-content">
-        <span class="close" id="close-modal">&times;</span>
-        <div id="video-container">
-          
+    <!-- DOCUMENTATIE MODAL (UNITY STYLE) -->
+   <div id="docsModal" class="docs-modal">
+    <div class="docs-wrapper">
+
+      <div class="docs-sidebar" id="docs-sidebar"></div>
+
+        <div class="docs-content">
+          <span class="docs-close" id="docs-close">&times;</span>
+          <div id="docs-body"></div>
         </div>
+
       </div>
     </div>
-    <script>
-      // Voorbeeld van het instellen van de download URL
-      const downloadUrl = "./Builds/TeamDemo.zip";
-    </script>
+
   </body>
 </html>

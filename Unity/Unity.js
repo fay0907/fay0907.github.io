@@ -1,4 +1,4 @@
-// Unity.js (vervang de bestaande inhoud van je Unity.js door dit)
+// Unity.js (origineel, met video-modal)
 
 // ---------- Klok ----------
 function updateClock() {
@@ -24,21 +24,21 @@ const projects = [
     downloadUrl: "./Builds/TeamDemo.zip"
   },
   {
-    name: "OperationOrbital",
-    path: "C:/Projects/OperationOrbital",
-    cloudStatus: "No",
-    modified: "5 days ago",
-    unityVersion: "2021.3.0f2",
-    videoUrl: "https://www.youtube.com/embed/tgbNymZ7vqY",
-    downloadUrl: "./Builds/OperationOrbital.zip"
+    name: "OperationStarfall",
+    path: "C:/Projects/TeamDemo",
+    cloudStatus: "Yes",
+    modified: "3 days ago",
+    unityVersion: "2021.3.1f1",
+    videoUrl: "../MP4/Zweden2Computers.mp4",
+    downloadUrl: "./Builds/TeamDemo.zip"
   },
   {
-    name: "PlanetPuzzle",
-    path: "C:/Projects/PlanetPuzzle",
+    name: "MyProjects",
+    path: "C:/Projects/MyProjects",
     cloudStatus: "Yes",
     modified: "2 weeks ago",
     unityVersion: "2022.1.0f1",
-    videoUrl: "../MP4/ZwedenGameplay.mp4", // MP4 demo
+    videoUrl: "../MP4/ZwedenGameplay.mp4",
     downloadUrl: "./Builds/PlanetPuzzle.zip"
   }
 ];
@@ -50,13 +50,13 @@ const closeModal = document.getElementById("close-modal");
 const videoContainer = document.getElementById("video-container");
 const addProjectBtn = document.getElementById("add-project-btn");
 
-// Plyr player instance (houdt huidige player bij zodat we hem kunnen vernietigen)
+// Plyr player instance
 let currentPlayer = null;
 
-// Stop media en destroy currentPlayer als aanwezig
+// Stop media en destroy currentPlayer
 function stopMedia() {
   if (currentPlayer && typeof currentPlayer.destroy === 'function') {
-    try { currentPlayer.destroy(); } catch (e) { /* ignore */ }
+    try { currentPlayer.destroy(); } catch (e) { }
     currentPlayer = null;
   }
   if (videoContainer) videoContainer.innerHTML = '';
@@ -72,14 +72,13 @@ function isVideoFile(url) {
   return /\.(mp4|webm|ogg)(\?.*)?$/i.test(url);
 }
 
-// openModal: maakt Plyr embed voor YouTube of een HTML5-video voor MP4, en instancieert Plyr
+// Open modal voor video
 function openModal(videoUrl) {
   if (!videoContainer || !modal) return;
 
   stopMedia();
 
   if (isYouTubeUrl(videoUrl)) {
-    // Zorg voor embed-formaat (haal id uit watch-URL als nodig)
     let src = videoUrl;
     if (/watch\?v=/.test(videoUrl)) {
       const idMatch = videoUrl.match(/[?&]v=([^&]+)/);
@@ -88,9 +87,6 @@ function openModal(videoUrl) {
       const idMatch = videoUrl.match(/youtu\.be\/([^?]+)/);
       if (idMatch) src = `https://www.youtube.com/embed/${idMatch[1]}`;
     }
-
-    // Plyr YouTube embed wrapper
-    // id "player" gebruikt om Plyr te initializen
     videoContainer.innerHTML = `
       <div class="plyr__video-embed" id="player">
         <iframe
@@ -101,39 +97,25 @@ function openModal(videoUrl) {
         ></iframe>
       </div>
     `;
-
-    // instantiate Plyr
     try {
       currentPlayer = new Plyr('#player', { 
         controls: ['play-large','play','progress','mute','volume','fullscreen'],
         youtube: { noCookie: false } 
       });
-    } catch (e) {
-      // als Plyr niet beschikbaar is (niet geladen), fallback: iframe al zichtbaar
-      currentPlayer = null;
-    }
-
+    } catch (e) { currentPlayer = null; }
   } else {
-    // HTML5 video (MP4)
-    // geef id "player" zodat we Plyr op dezelfde selector kunnen gebruiken
     videoContainer.innerHTML = `
       <video id="player" controls playsinline>
         <source src="${videoUrl}" type="video/mp4" />
         Je browser ondersteunt dit videoformaat niet.
       </video>
     `;
-
-    // instantiate Plyr
     try {
       currentPlayer = new Plyr('#player', {
         controls: ['play-large','play','progress','mute','volume','fullscreen'],
-        // optioneel: instellingen, captions, etc.
       });
-      // probeer autoplay (kan geblokkeerd worden door browser als niet-muted)
-      currentPlayer.play().catch(()=>{/* autoplay geblokkeerd, geen probleem */});
-    } catch (e) {
-      currentPlayer = null;
-    }
+      currentPlayer.play().catch(()=>{});
+    } catch (e) { currentPlayer = null; }
   }
 
   modal.style.display = "block";
@@ -157,7 +139,7 @@ function loadProjects() {
 
     const projectPath = document.createElement("div");
     projectPath.classList.add("project-path");
-    projectPath.innerText = project.path;
+    if(project.path) projectPath.innerText = project.path;
 
     detailsDiv.appendChild(projectName);
     detailsDiv.appendChild(projectPath);
@@ -165,9 +147,9 @@ function loadProjects() {
     const infoDiv = document.createElement("div");
     infoDiv.classList.add("project-info");
     infoDiv.innerHTML = `
-      <div>Cloud: ${project.cloudStatus}</div>
-      <div>Modified: ${project.modified}</div>
-      <div>Version: ${project.unityVersion}</div>
+      ${project.cloudStatus ? `<div>Cloud: ${project.cloudStatus}</div>` : ''}
+      ${project.modified ? `<div>Modified: ${project.modified}</div>` : ''}
+      ${project.unityVersion ? `<div>Version: ${project.unityVersion}</div>` : ''}
     `;
 
     if (project.downloadUrl) {
@@ -179,6 +161,15 @@ function loadProjects() {
       downloadButton.addEventListener('click', (e) => e.stopPropagation());
       infoDiv.appendChild(downloadButton);
     }
+
+    const docsButton = document.createElement("button");
+    docsButton.classList.add("docs-button");
+    docsButton.innerText = "Open Documentatie";
+    docsButton.addEventListener("click", (e) => {
+      e.stopPropagation(); 
+      openDocs(project.name);
+    });
+    infoDiv.appendChild(docsButton);
 
     projectItem.appendChild(detailsDiv);
     projectItem.appendChild(infoDiv);
@@ -215,4 +206,3 @@ if (addProjectBtn) {
 
 // Init
 document.addEventListener('DOMContentLoaded', loadProjects);
-  ````````````
