@@ -2,11 +2,7 @@
 body
 {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #242529; /* Donkere achtergrondkleur */
   background-image: url('../Jpg/DiscordBackgound.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   margin: 0;
   padding-bottom: 60px; /* <-- Deze moet overal! */
   color: #ffffff;
@@ -15,6 +11,38 @@ body
   align-items: center;
   min-height: 100vh;
 }
+/* Achtergrond blur + donkere overlay */
+body::before {
+    content: "";
+    position: fixed; /* blijft staan bij scrollen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(2px); /* <- pas blur aan naar smaak */
+    transform: scale(1.05); /* voorkomt randjes na blur */
+
+    z-index: -2; /* achter alle content */
+}
+
+/* donkere tint bovenop de blur */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(38, 38, 38, 0.55); /* <- pas intensiteit aan */
+    z-index: -1; /* net boven de blur maar onder alle content */
+}
+
 
 .profile-container 
 {

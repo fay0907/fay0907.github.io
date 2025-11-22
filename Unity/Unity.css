@@ -11,7 +11,7 @@ box-sizing: border-box;
 background-color: #212121;
 font-family: Arial, sans-serif;
 color: #eee;
-overflow: hidden;
+overflow: visible;
 }
 
 /* ---------- Unity Hub Container (centrum plaatsen) ---------- */
@@ -434,3 +434,118 @@ object-fit: contain;
   background: #555;
 }
 
+#taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  z-index: 1000;
+}
+
+/* Taskbar rechter gedeelte - helemaal rechts */
+#taskbar-right {
+  position: absolute;
+  right: 15px;
+  top: 0;
+  height: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#taskbar-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#taskbarLeft {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.left-taskbarButton {
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 6px;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-taskbarButton:not(:first-child) img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Taskbar knoppen */
+.taskbar-btn {
+  background: none;
+  border: none;
+  height: 30px;
+  cursor: pointer;
+}
+
+.taskbar-btn img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+/* Eerste knop zonder afronding, de rest met afronding */
+.taskbar-btn:first-child img {
+  border-radius: 0;
+}
+
+.taskbar-btn:not(:first-child) img {
+  border-radius: 50%;
+}
+
+/* Achtergrondkiezer, verborgen indien niet nodig */
+#bgPicker {
+  margin-left: auto;
+  margin-right: 10px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Klokstijl */
+#clock {
+  color: white;
+  font-size: 16px !important;
+  font-family: 'Courier New', monospace;
+  padding: 5px 10px !important;
+  border-radius: 5px!important;
+}
+
+/* Systeemvak-icoontjes (indien van toepassing) */
+#system-tray {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.system-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
