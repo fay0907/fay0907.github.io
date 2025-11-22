@@ -401,7 +401,7 @@ object-fit: contain;
   position: absolute;
   right: 20px;
   top: 20px;
-  font-size: 35px;
+  font-size: 20px;
   cursor: pointer;
   color: #ccc;
   transition: .2s;

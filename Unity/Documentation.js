@@ -6,34 +6,67 @@ const projects = [
 /*||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
   {
-    name: "ZwedenProject",
-    path: "C:/Projects/ZwedenProject",
+    name: "SwedenProject",
+    path: "C:/Projects/SwedenProject",
     cloudStatus: "Yes",
     modified: "3 days ago",
     unityVersion: "2021.3.1f1",
     media: [
       "../MP4/Zweden2Computers.mp4",
-      "../Jpg/foto_team1.jpg"
+      "../Jpg/foto_team1.jpg",
+      "../MP4/ZwedenGameplay.mp4"
     ],
     docs: [
       {
         title: "Introductie",
         content: `
-          <h1>ZwedenProject Introductie</h1>
-          <p>Welkom bij ZwedenProject!</p>
+          <h1>SwedenProject Introductie</h1>
+          <div style="height:20px"></div>
+
+          <p>Welkom bij SwedenProject!</p>
+          <div style="height:20px"></div>
+
+          <p>The Sweden Project is a local multiplayer party game created by a seven-person team over one month. 
+          Set in the 1600s during Dutch - Swedish tensions, players take the role of Dutch or Swedish villagers working together to gather resources, 
+          trade locally, and complete lively minigames. Sweden needs armaments for the war effort, 
+          while the Netherlands needs materials to reinforce its dikes — but both sides must succeed to win. 
+          Coordinate, cooperate, and keep both nations safe from danger.</p >
+          <div style="height:20px"></div>
+
           <img src="../Jpg/foto_team_intro.jpg">
         `
       },
       {
         title: "Gameplay",
         content: `
-          <h2>Gameplay Mechanics</h2>
-          <video controls>
+          <h1>Gameplay Mechanics</h1>
+          
+          <div style="height:20px"></div>
+          <h3>The gameplay one screen width stert menu and trading system</h3>
+
+          <video controls style="width:100%; border-radius:10px; margin-bottom:15px;">
             <source src="../MP4/ZwedenGameplay.mp4" type="video/mp4">
           </video>
+
+          <h3>The gameplay one two screens</h3>
+          <div style="height:20px"></div>
+
+          <video controls style="width:100%; border-radius:10px; margin-bottom:15px;">
+            <source src="../MP4/Zweden2Computers.mp4" type="video/mp4">
+          </video>
+
           <p>Hier wordt gameplay uitgelegd.</p>
         `
       }
+      ,{
+        title: "Code Snippets",
+        content: `
+          <h1>Code Snippets</h1>
+          <p>Hier zijn enkele codevoorbeelden:</p>
+          <pre><code>// Voorbeeld code hier</code></pre>
+        `
+      }
+
     ],
     downloadUrl: "./Builds/ZwedenProject.zip"
   },
@@ -50,8 +83,12 @@ const projects = [
     unityVersion: "2021.3.0f2",
     media: [
       "../NeonFendingMachine/gambling.png",
-      "../NeonFendingMachine/starfalgambling-made-with-clipchamp.gif"
-
+      "../NeonFendingMachine/starfalgambling-made-with-clipchamp.gif",
+      "../PortfolioGame/EnemyAttack.png",
+      "../PortfolioGame/BLockAttack.png",
+      "../PortfolioGame/PlayerFunction.png",
+      "../PortfolioGame/SwordAttack.png",
+      "../PortfolioGame/IFightStrategy-Interface.png"
     ],
     docs: [
       {
@@ -66,6 +103,18 @@ const projects = [
           style="width:100%; border-radius:10px; margin-bottom:15px;">
         `          
       }
+      ,{
+        title: "Code Sippets",
+        content: `
+          <h1>Code Sippets</h1>
+          <img src="../PortfolioGame/IFightStrategy-Interface.png" alt="Code Snippet" style="width:100%; border-radius:10px; margin-bottom:15px;">
+          <img src="../PortfolioGame/PlayerFunction.png" alt="Code Snippet" style="width:100%; border-radius:10px; margin-bottom:15px;">
+          <img src="../PortfolioGame/SwordAttack.png" alt="Code Snippet" style="width:100%; border-radius:10px; margin-bottom:15px;">
+          <img src="../PortfolioGame/BlockAttack.png" alt="Code Snippet" style="width:100%; border-radius:10px; margin-bottom:15px;">
+          <img src="../PortfolioGame/EnemyAttack.png" alt="Code Snippet" style="width:100%; border-radius:10px; margin-bottom:15px;">
+        `
+      }
+
     ],
     downloadUrl: "./Builds/OperationStarfall.zip"
   },
@@ -94,6 +143,13 @@ const projects = [
             <source src="../PortfolioGame/IFightStrategyClip.mp4" type="video/mp4">
           </video>
         ` 
+      }
+      ,{
+        title: "Code Sippets",
+        content: `
+          <h1>Code Sippets</h1>
+          
+        `
       }
     ],
     downloadUrl: "./Builds/PlanetPuzzle.zip"

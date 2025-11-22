@@ -20,7 +20,6 @@ const projects = [
     cloudStatus: "Yes",
     modified: "3 days ago",
     unityVersion: "2021.3.1f1",
-    videoUrl: "../MP4/Zweden2Computers.mp4",
     downloadUrl: "./Builds/TeamDemo.zip"
   },
   {
@@ -29,7 +28,6 @@ const projects = [
     cloudStatus: "Yes",
     modified: "3 days ago",
     unityVersion: "2021.3.1f1",
-    videoUrl: "../MP4/Zweden2Computers.mp4",
     downloadUrl: "./Builds/TeamDemo.zip"
   },
   {
@@ -38,7 +36,6 @@ const projects = [
     cloudStatus: "Yes",
     modified: "2 weeks ago",
     unityVersion: "2022.1.0f1",
-    videoUrl: "../MP4/ZwedenGameplay.mp4",
     downloadUrl: "./Builds/PlanetPuzzle.zip"
   }
 ];
