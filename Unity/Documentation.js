@@ -43,7 +43,9 @@ const projects = [
           Set in the 1600s during Dutch - Swedish tensions, players take the role of Dutch or Swedish villagers working together to gather resources, 
           trade locally, and complete lively minigames. Sweden needs armaments for the war effort, 
           while the Netherlands needs materials to reinforce its dikes — but both sides must succeed to win. 
-          Coordinate, cooperate, and keep both nations safe from danger.</p >
+          Coordinate, cooperate, and keep both nations safe from danger.
+          to check out code for this project, check out my 
+          <a href='https://github.com/L0rdSquidy/Team-2-Game/tree/main/Team2Game' target='_blank' rel='noopener noreferrer'>Github</a></p >
           <div style="height:20px"></div>
 
           <img src="../DubleAlliance/DubbleAlliance.png" alt="Sweden Project Logo">
@@ -106,7 +108,8 @@ const projects = [
         <p>Project Starfall is a Unity project I developed with half of my class to simulate working at a professional game studio.
         We were colocated in an office-style environment and ran the full Agile process: rotating Sprint Masters, 
         sprint planning, daily stand-ups and stand-downs, and regular retrospectives. We used Codecks to track tasks and keep planning transparent, 
-        adapted our workflow each sprint, and delivered playable builds while practicing real-world team communication and coordination.<P>
+        adapted our workflow each sprint, and delivered playable builds while practicing real-world team communication and coordination.
+        <P>
         
         <img src="../NeonFendingMachine/NEON.png" alt="Operation Starfall Logo">
         `
@@ -166,7 +169,9 @@ const projects = [
           <div style="height:20px"></div>
           he main genre will be open world, and the idea is that you go on quests to find different kinds of keys to help the other worlds. After you finish the main story, you can replay all the games as separate levels if you want.
           <div style="height:20px"></div>
-          This is everything I’ve thought of so far for the project, but hopefully I’ll add a lot more later.<p>
+          This is everything I’ve thought of so far for the project, but hopefully I’ll add a lot more later.
+          to check out code for this project, check out my 
+        <a href='https://github.com/fay0907/PortfolioGame/tree/OpenWorld/PortfolioGame' target='_blank' rel='noopener noreferrer'>Github</a><p>
         `
       },
       {
