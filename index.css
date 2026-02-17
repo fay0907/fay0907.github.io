@@ -180,3 +180,112 @@ body {
   height: 200px;
   object-fit: contain;
 }
+/* ===================================================== */
+/* WINDOWS CLASSIC POPUP STYLE – LAYOUT SAFE + TEXT FIX  */
+/* ===================================================== */
+
+/* Window frame */
+body > div[style*="position: fixed"][style*="background: white"] {
+    background: #c0c0c0 !important;
+    border: 2px solid #000;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    border-right-color: #404040;
+    border-bottom-color: #404040;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 20px !important;
+    font-family: Tahoma, Verdana, sans-serif;
+}
+
+/* Title bar */
+body > div[style*="position: fixed"] > div:first-child {
+    background: linear-gradient(to right, #000080, #1084d0) !important;
+    color: white !important;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+    padding: 4px 6px !important;
+    margin: -20px -20px 10px -20px !important;
+}
+
+/* Close button */
+body > div[style*="position: fixed"] button {
+    background: #c0c0c0 !important;
+    border: 2px solid #000;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    border-right-color: #404040;
+    border-bottom-color: #404040;
+    border-radius: 0;
+    color: black !important;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+}
+
+body > div[style*="position: fixed"] button:active {
+    border-top-color: #404040;
+    border-left-color: #404040;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+}
+
+/* Content area */
+.popup-content {
+    background: #c0c0c0;
+    color: black;
+    padding: 15px !important;
+
+    /* behoud je originele layout */
+    line-height: 1.6 !important;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+
+    /* 🔥 TEXT FIX */
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+}
+
+/* Resize hoekje */
+body > div[style*="position: fixed"] > div[style*="cursor: nwse-resize"] {
+    background: repeating-linear-gradient(
+        135deg,
+        #808080,
+        #808080 2px,
+        #c0c0c0 2px,
+        #c0c0c0 4px
+    ) !important;
+    border: none !important;
+}
+
+/* ============================= */
+/* PROJECT POPUP TEKST FIX       */
+/* ============================= */
+
+/* Voorkomt dat link / knop tekst uit elkaar valt */
+.popup-content a,
+.popup-content button {
+    white-space: nowrap !important;
+    display: inline-block;
+    min-width: max-content;
+}
+
+/* Titels */
+.popup-content h3 {
+    white-space: normal !important;
+    margin-top: 12px;
+}
+
+/* Paragrafen */
+.popup-content p {
+    margin-bottom: 10px;
+}
+
+/* ❗ Zet clamp fonts uit zodat tekst niet springt bij resize */
+.popup-content h3,
+.popup-content p,
+.popup-content button {
+    font-size: 14px !important;
+}

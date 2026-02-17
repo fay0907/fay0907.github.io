@@ -363,4 +363,18 @@ if(addProjectBtn){
 }
 
 /* -------------------- Init -------------------- */
-document.addEventListener('DOMContentLoaded', loadProjects);
+document.addEventListener('DOMContentLoaded', () => {
+  loadProjects();
+  
+  // Check URL parameters for project to open
+  const urlParams = new URLSearchParams(window.location.search);
+  const projectName = urlParams.get('project');
+  
+  if (projectName) {
+    const project = projects.find(p => p.name === projectName);
+    if (project && project.docs) {
+      // Open docs automatically
+      setTimeout(() => openDocs(project.docs), 500);
+    }
+  }
+});
