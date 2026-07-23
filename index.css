@@ -6,15 +6,9 @@
   overflow: hidden;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 
 body {
-  padding: 0; /* Verwijder standaard padding */
-  box-sizing: border-box; /* Zorgt voor consistente box-modellen */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-image: url('Jpg/Dipsous.jpg');
   background-size: cover;
@@ -56,19 +50,6 @@ body {
 
 .window.active {
   display: block;
-}
-
-/* Reset en basisinstellingen */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0; /* Verwijder standaard marges */
-  padding: 0; /* Verwijder standaard padding */
-  box-sizing: border-box; /* Zorgt voor consistente box-modellen */
 }
 
 /* ---------- Taskbar ---------- */
@@ -192,7 +173,7 @@ body > div[style*="position: fixed"][style*="background: white"] {
     border-left-color: #fff;
     border-right-color: #404040;
     border-bottom-color: #404040;
-    border-radius: 0 !important;
+    border-radius: 2px !important;
     box-shadow: none !important;
     padding: 20px !important;
     font-family: Tahoma, Verdana, sans-serif;

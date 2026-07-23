@@ -1,3 +1,15 @@
+
+function updateClock() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+    }
+    
+    setInterval(updateClock, 1000);
+    updateClock();
+
 // Array om alle open popups bij te houden
 const openPopups = [];
 
@@ -11,82 +23,14 @@ function closeAllPopups() {
     openPopups.length = 0;
 }
 
-// Portfolio Version Selection Modal
-function showVersionSelector() {
-    const modal = document.createElement('div');
-    modal.id = 'version-modal';
-    modal.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 2000;
-    `;
-    
-    const modalContent = document.createElement('div');
-    modalContent.style.cssText = `
-        background: white;
-        padding: 30px;
-        border-radius: 10px;
-        text-align: center;
-        color: black;
-        max-width: 400px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    `;
-    
-    modalContent.innerHTML = `
-        <h2 style="margin-bottom: 20px;">Choose Your Portfolio Version</h2>
-        <p style="margin-bottom: 20px; color: #666;">
-            ⚠️ Select whether you want to see the short or long version of this portfolio.
-        </p>
-        <div style="display: flex; gap: 10px; justify-content: center;">
-            <button id="short-btn" style="
-                padding: 10px 20px;
-                background-color: #4CAF50;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                font-size: 16px;
-            ">Short Version</button>
-            <button id="long-btn" style="
-                padding: 10px 20px;
-                background-color: #2196F3;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                font-size: 16px;
-            ">Long Version</button>
-        </div>
-    `;
-    
-    modal.appendChild(modalContent);
-    document.body.appendChild(modal);
-    
-    document.getElementById('short-btn').addEventListener('click', () => {
-        modal.remove();
-        localStorage.setItem('portfolioVersion', 'short');
-        showLongVersionModals();
-        showNavigationGuide();
-    });
-    
-    document.getElementById('long-btn').addEventListener('click', () => {
-        modal.remove();
-        localStorage.setItem('portfolioVersion', 'long');
-        showNavigationGuide();
-    });
-}
-
 // Toon extra popups voor korte versie - allemaal tegelijk
-function showLongVersionModals() {
-    closeAllPopups();
-    
+document.addEventListener('DOMContentLoaded', () => {
+    showAllPopups();
+    showNavigationGuide();
+});
+
+// Toon alle popups automatisch
+function showAllPopups() {
     const popups = [
         {
             title: 'About Me',
@@ -711,14 +655,5 @@ document.getElementById('reload-version-btn').addEventListener('click', () => {
     showVersionSelector();
 });
 
-function updateClock() {
-        const now = new Date();
-        const hours = String(now.getHours()).padStart(2, '0');
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-        const seconds = String(now.getSeconds()).padStart(2, '0');
-        document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
-    }
-    
-    setInterval(updateClock, 1000);
-    updateClock();
+
     
